@@ -1,5 +1,3 @@
-ui/app.py
-
 import tkinter as tk
 from tkinter import messagebox
 from core.data_manager import load_crops, save_crops, export_csv, save_settings, load_settings
