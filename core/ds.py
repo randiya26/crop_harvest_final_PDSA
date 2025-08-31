@@ -6,7 +6,7 @@ import heapq
 from typing import Any, List, Optional
 
 class MinHeap:
-    def _init_(self) -> None:
+    def __init__(self) -> None:
         self._heap: List[Any] = []
 
     def push(self, item: Any) -> None:
@@ -34,7 +34,7 @@ class MinHeap:
         return out
 
 class Queue:
-    def _init_(self) -> None:
+    def __init__(self) -> None:
         self._items: List[Any] = []
 
     def enqueue(self, item: Any) -> None:
