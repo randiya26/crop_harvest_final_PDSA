@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import tkinter as tk
 from tkinter import messagebox
 from core.data_manager import load_crops, save_crops, export_csv, save_settings, load_settings
@@ -7,7 +11,7 @@ from core.utils import status_label
 from datetime import datetime
 
 class HarvestApp:
-    def _init_(self, root):
+    def __init__(self, root):
         self.root = root
         self.root.title("Crop Harvest Calendar")
         self.scheduler = Scheduler()

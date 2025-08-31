@@ -1,7 +1,7 @@
 from datetime import datetime
 
 class Crop:
-    def _init_(self, name, harvest_date, sowing_date=None, notes="", crop_type=""):
+    def __init__(self, name, harvest_date, sowing_date=None, notes="", crop_type=""):
         self.name = name
         self.harvest_date = datetime.strptime(harvest_date, "%Y-%m-%d")
         self.sowing_date = datetime.strptime(sowing_date, "%Y-%m-%d") if sowing_date else None

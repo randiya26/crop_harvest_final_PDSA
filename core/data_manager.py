@@ -2,8 +2,8 @@
 import json, csv, os
 from core.models import Crop
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(_file_)), "data")
-EXPORT_DIR = os.path.join(os.path.dirname(os.path.dirname(_file_)), "exports")
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+EXPORT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "exports")
 
 CROPS_FILE = os.path.join(DATA_DIR, "crops.json")
 SETTINGS_FILE = os.path.join(DATA_DIR, "settings.json")
@@ -17,7 +17,10 @@ def load_crops():
     if not os.path.exists(CROPS_FILE):
         return []
     with open(CROPS_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
+        content = f.read().strip()
+        if not content:
+            return []
+        data = json.loads(content)
         return [Crop(**c) for c in data]
 
 def save_crops(crops):

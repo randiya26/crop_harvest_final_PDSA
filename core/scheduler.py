@@ -5,7 +5,7 @@ from core.ds import MinHeap, Queue
 from core.utils import status_label
 
 class Scheduler:
-    def _init_(self):
+    def __init__(self):
         settings = load_settings()
         self.weather_delay_days: int = int(settings.get("weather_delay_days", 0))
         self._heap = MinHeap()          # (effective_date, seq, crop)
